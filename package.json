@@ -1,0 +1,51 @@
+{
+  "name": "tsx-storage",
+  "version": "1.0.0",
+  "description": "localStorage、sessionStorage的TypeScript封装，提供通用的API方法，同时支持泛型方法。",
+  "main": "dist/storage.common.min.js",
+  "module": "dist/storage.esm.min.js",
+  "unpkg": "dist/storage.umd.min.js",
+  "jsdelivr": "dist/storage.umd.min.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "dist",
+    "types",
+    "examples"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caojianping/tsx-storage.git"
+  },
+  "keywords": [
+    "storage",
+    "localStorage",
+    "sessionStorage",
+    "TypeScript",
+    "JavaScript",
+    "Node.js"
+  ],
+  "author": "caojianping",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caojianping/tsx-storage/issues"
+  },
+  "homepage": "https://github.com/caojianping/tsx-storage#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.0.5",
+    "@typescript-eslint/parser": "^4.33.0",
+    "rollup": "^2.58.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "typescript": "^4.4.3"
+  },
+  "buildOptions": {
+    "name": "Storage"
+  }
+}

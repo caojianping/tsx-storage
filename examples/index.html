@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storage测试</title>
+  </head>
+  <body>
+    <script src="../dist/storage.umd.js"></script>
+    <script>
+      var Storage = window.Storage;
+      if (Storage) {
+        // 测试LocalStorage
+        var LocalStorage = Storage.LocalStorage;
+        LocalStorage.setItem('test_number', 999);
+        console.log('LocalStorage.test_number:', LocalStorage.getItem('test_number'));
+
+        LocalStorage.setItem('test_string', 'abc');
+        console.log('LocalStorage.test_string:', LocalStorage.getItem('test_string'));
+
+        LocalStorage.setItem('test_obj', { id: 1, name: 'cjp' });
+        console.log('LocalStorage.test_obj:', LocalStorage.getItem('test_obj'));
+
+        setTimeout(() => {
+          LocalStorage.removeItem('test_string');
+          console.log('LocalStorage.test_string 3秒后:', LocalStorage.getItem('test_string'));
+        }, 3000);
+
+        setTimeout(() => {
+          LocalStorage.clear();
+          console.log('LocalStorage 6秒后清空');
+        }, 6000);
+
+        // 测试SessionStorage
+        var SessionStorage = Storage.SessionStorage;
+        SessionStorage.setItem('test_number', 999);
+        console.log('SessionStorage.test_number:', SessionStorage.getItem('test_number'));
+
+        SessionStorage.setItem('test_string', 'abc');
+        console.log('SessionStorage.test_string:', SessionStorage.getItem('test_string'));
+
+        SessionStorage.setItem('test_obj', { id: 1, name: 'cjp' });
+        console.log('SessionStorage.test_obj:', SessionStorage.getItem('test_obj'));
+
+        setTimeout(() => {
+          SessionStorage.removeItem('test_string');
+          console.log('SessionStorage.test_string 9秒后:', SessionStorage.getItem('test_string'));
+        }, 9000);
+
+        setTimeout(() => {
+          SessionStorage.clear();
+          console.log('LocalStorage 12秒后清空');
+        }, 12000);
+      }
+    </script>
+  </body>
+</html>
